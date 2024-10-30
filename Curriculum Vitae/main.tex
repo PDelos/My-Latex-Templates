@@ -1,0 +1,245 @@
+\documentclass[a4paper,10pt]{article}
+
+% Package imports
+\usepackage{latexsym,xcolor,ragged2e,tabularx,titlesec,geometry}
+\usepackage{enumitem,fancyhdr,graphicx,fontawesome5}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage[most]{tcolorbox}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{5pt}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% Text formatting
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeSubheading}[4]{
+\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{#3} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.1mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+
+% Font options
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont}
+
+\newcommand{\langflag}[1]{\includegraphics[height=0.7em, keepaspectratio]{Languages/#1}}
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Pol de los Santos Subirats}}
+\end{center}
+
+\vspace{-4mm}
+
+\begin{center}
+    \small{
+    Barcelona, Spain |
+    \href{mailto:delossantospol001@gmail.com}{delossantospol001@gmail.com} | 
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/pol-de-los-santos-subirats/}{pol-de-los-santos} | 
+    \socialicon{\faGithub} \href{https://github.com/PDelos}{PDelos} 
+    }
+\end{center}
+\vspace{-5mm}
+\begin{center}
+\small{
+    \langflag{England.png} English |
+    \langflag{Spain.png} Spanish |
+    \langflag{France.png} French |
+    \langflag{Catalan.png} Catalan 
+}
+\end{center}
+\vspace{-9mm}
+
+
+\section{\textbf{Work Experience}}
+\resumeSubHeadingListStart
+\resumeSubheading
+    {Esperanto Technologies, Inc [\href{https://www.esperanto.ai/}{\faIcon{globe}}]}{Remote}
+    {Data Engineer}{June 2024 - September 2024}
+    \resumeItemListStart
+    \item Ensured functional execution of MoE models on company chips.
+    \item Designed and validated ONNX graphs for MoE models.
+    \item Refined MoE model accuracy to 90\% before gating through statistical analysis of expert predictions.
+    \item Integrated new MoE expert layers, resulting in 280\% faster inference, and optimized with quantization and sparse execution.
+    \resumeItemListEnd
+\resumeSubheading
+    {Science4Tech [\href{https://s4t.health/}{\faIcon{globe}}]}{Barcelona, Spain}
+    {Data Scientist}{July 2023 - April 2024}
+    \resumeItemListStart
+    \item Improved oncology clinical trials efficiency by using advanced ML models.
+    \item Enhanced risk monitoring and trial optimization, reducing adverse events by 21.4\%.
+    \item Identified key behavioral patterns from diverse patient data, increasing patient retention by 15\%.
+    \resumeItemListEnd 
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+
+\section{\textbf{Education}}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Bachelor's Degree in Data Science and Engineering}{Barcelona, Spain}
+{CFIS - Polytechnic University of Catalonia (UPC)}{September 2022 - June 2027}
+\resumeItemListStart
+\item \small{Degree jointly offered by the Faculty of Mathematics and Statistics and the Schools of Telecommunications Engineering and Computer Science.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Bachelor's Degree in Biomedical Engineering}{Barcelona, Spain}
+{CFIS - Polytechnic University of Catalonia (UPC)}{September 2022 - June 2027}
+\resumeItemListStart
+\item \small{Degree offered by the School of Engineering of Eastern Barcelona.}
+\resumeItemListEnd
+
+\resumeSubheading
+{International Baccalaureate + Scientific Spanish Baccalaureate}{Girona, Spain}
+{INS Jaume Vicens Vives}{September 2020- June 2022}
+\resumeItemListStart
+\item \small{Graduated from a prestigious high school, supported by the CELLEX Foundation. (Grade: 13.167/14)}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+\section{\textbf{Projects}}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Datathon Web Development}
+  {Skills showed: Docker | Sveltekit | Pocketbase | HTML | Javascript | CSS}
+  {Current}
+  {{}[\href{https:www.datathon.cat}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+\item Lead developer to a full-stack web application using Docker, SvelteKit, and PocketBase, achieving seamless containerization and state management.
+\resumeItemListEnd
+
+\resumeProject
+  {Web Scrappers}
+  {Skills showed: Python | JavaScript | Rotating proxies | HTML}
+  {June 2024}
+  {{}[\href{https://github.com/PDelos/Code_Scrappers}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+\item Developed scrapers with rotating proxies to collect over 300 scripts from sites like CodeForces, Jutge.org ...
+\resumeItemListEnd
+
+\resumeProject
+  {Outfit Generator: Awarded 1st Place in Datathon}
+  {Skills showed: Python | C++ | SQL}
+  {11 November 2023}
+  {{}[\href{https://github.com/PDelos/Datathon_2023_outfit_generator}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+\item Developed a Python web app for generating fashion outfits using images from the Mango Database.
+\item Implemented a C++ entropy minimization algorithm for optimal outfit combinations.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-5mm}
+
+\section{\textbf{Honors \& Awards}}
+\resumeItemListStart
+\item \textbf{2021:} BarcelonaTech Math Contest (Bronze medal)
+\item \textbf{2022:} Prova Cangur (8th place) --- HP Codewars (3rd place) --- OIcat (Bronze medal) --- Catalonia's Chemistry Olympiad (9th place) --- Olitele (Notable Honorable Mention).
+\item \textbf{2023:} FME Datathon (1st place)
+\resumeItemListEnd
+\vspace{-2mm}
+
+\section{\textbf{Miscellaneous \& Interests}}
+\resumeItemListStart
+\item \textbf{International Competitions:} Represented Spain at the International Informatics Olympiad by Teams in 2021.
+\item \textbf{Academic Pursuits:} Participated in Math Olympiad prep course (2021); awarded scholarship for advanced algorithm classes in Leagues of Code (2022).
+\item \textbf{Leadership \& Organization:} 
+    \vspace{-2mm}
+    \begin{itemize}[leftmargin=*,labelsep=2mm,itemsep=-0.5mm]
+        \item Founder of the UP+C Integration Bee (2023).
+        \item Primary organizer and problem setter for 2nd UP+C Integration Bee (2024).
+        \item Taught advanced computer science course for Informatics Olympiad (2023).
+    \end{itemize}
+    \vspace{-1mm}
+\item \textbf{Community Involvement:} Assisted with web app design for Associació d'Estudiants de Dades (2024).
+\resumeItemListEnd
+
+\newpage
+
+\section{\textbf{References}}
+\vspace{1mm}
+\small{
+\begin{enumerate}[leftmargin=*,labelsep=2mm]
+\item \textbf{Cristina Fernández Barrat}\\
+   Chief Product \& Innovation Officer (CP\&IO) \\
+   Science 4 Tech (S4T) \\
+   Email: \href{mailto:cristina.fernandez@s4t.health}{cristina.fernandez@s4t.health}\\
+   \textit{Relationship: Project Manager}
+\vspace{1mm}
+\item \textbf{Nivard Aymerich Capdevila}\\
+   Software Manager and AI Technical Lead \\
+   Esperanto Technologies, Inc \\
+   Email: \href{nivard.aymerich@esperantotech.com}{nivard.aymerich@esperantotech.com} \\
+   \textit{Relationship: Project Manager}
+
+\end{enumerate}
+}
+
+\end{document}
