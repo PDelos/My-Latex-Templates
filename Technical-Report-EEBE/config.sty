@@ -1,0 +1,95 @@
+% config.sty
+
+% Define the document class if you wish to have it standardized
+\ProvidesPackage{config}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% BASIC Packages
+\usepackage[catalan]{babel} % sets all default latex text to specified language
+\usepackage{amsmath, amsfonts, amsthm, graphicx, geometry, xcolor, mathtools} % Basic
+\usepackage[utf8]{inputenc}
+
+% OTHER Packages
+\usepackage{hyperref, bookmark}
+\usepackage{fancyhdr, lastpage}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\usepackage{minted}
+\usepackage{tikz, tcolorbox}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% CUSTOM COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\myname}{Pol de los Santos}
+\newcommand{\mymail}{pol.de.los.santos@estudiantat.upc.edu}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% COLOURS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Optional: Define a background color for the code blocks
+\definecolor{codeBackground}{rgb}{0.97,0.97,0.97} % Light gray background color
+\definecolor{linkColor}{rgb}{0.00, 0.30, 0.70}  % Link color
+\definecolor{citeColor}{rgb}{0.00, 0.00, 0.50}    % Citation color
+\definecolor{urlColor}{rgb}{0.00, 0.00, 0.80}     % URL color
+\definecolor{fileColor}{rgb}{0.50, 0.00, 0.00}    % File link color
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Page Look Config 
+\geometry{left=3cm, right=3cm, top=3cm, bottom=3cm}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape \MakeUppercase{Plantilla}}
+\fancyhead[R]{\slshape P.Santos}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+% Add bibliography
+\addbibresource{references.bib}
+
+% Caption settings
+\captionsetup{
+    format = plain,
+    font = footnotesize,
+    labelfont = sc
+}
+
+% Define links and ref config
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkColor, % Use defined color for internal links
+    citecolor=citeColor, % Use defined color for citations
+    urlcolor=urlColor, % Use defined color for URLs
+    filecolor=fileColor, % Use defined color for file links
+    pdftitle={Plantilla},
+    pdfauthor={Pol de los Santos Subirats},
+}
+
+% General minted settings
+\setminted{
+    frame=single,             % Single frame around code
+    framerule=0pt,           % No border thickness for frame
+    bgcolor=codeBackground,   % Use the defined light gray background color
+    fontsize=\footnotesize,   % Small font size
+    numbers=left,             % Line numbers on the left
+    numbersep=5pt,            % Space between line numbers and code
+    stepnumber=1,             % Line numbers increment by 1
+    xleftmargin=15pt,         % Left margin inside the frame
+    xrightmargin=15pt,        % Right margin inside the frame
+    breaklines=true,          % Automatic line breaking
+    framesep=0mm              % Space between frame and code
+}
+
+% Where to look for figures
+\graphicspath{{figures/}}
